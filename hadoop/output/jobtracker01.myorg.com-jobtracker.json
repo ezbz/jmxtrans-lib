@@ -1,0 +1,54 @@
+{
+    "servers": [
+        {
+            "port": 9014,
+            "host": "jobtracker01.myorg.com",
+            "queries": [            
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "hadoop:service=JobTracker,name=JobTrackerInfo",
+                    "resultAlias": "JobTrackerInfo",
+                    "attr": [
+                          "ThreadCount"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "hadoop:service=JobTracker,name=RpcActivityForPort8021",
+                    "resultAlias": "JobTrackerRpcActivity",
+                    "attr": [
+                        "NumOpenConnections",
+                        "ReceivedBytes",
+                        "SentBytes",
+                        "RpcProcessingTimeAvgTime",
+                        "RpcProcessingTimeMinTime",
+                        "RpcProcessingTimeMaxTime",
+                        "RpcProcessingTimeNumOps",
+                        "RpcQueueTimeAvgTime",
+                        "RpcQueueTimeMinTime",
+                        "RpcQueueTimeMaxTime",
+                        "RpcQueueTimeNumOps",
+                        "callQueueLen"
+                    ]
+                }
+            ],
+            "numQueryThreads": 2
+        }
+    ]
+}

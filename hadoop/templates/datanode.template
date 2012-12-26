@@ -1,0 +1,116 @@
+{
+    "servers": [
+        {
+            "port": %(port)s,
+            "host": "%(host)s",
+            "queries": [
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "typeNames" : [
+                                   "name"
+                                ],
+                                "port": %(graphite_port)s,
+                                "host": "%(graphite_host)s"
+                            }
+                        }
+                    ],
+                    "obj": "hadoop:service=DataNode,name=RpcActivityForPort50020",
+                    "resultAlias": "DataNodeRpcAcitivity",
+                    "attr": [
+                        "NumOpenConnections",
+                        "callQueueLen",
+                        "RpcQueueTimeNumOps",
+                        "RpcQueueTimeAvgTime",
+                        "RpcQueueTimeMinTime",
+                        "RpcQueueTimeMaxTime",
+                        "RpcProcessingTimeNumOps",
+                        "RpcProcessingTimeAvgTime",
+                        "RpcProcessingTimeMinTime",
+                        "RpcProcessingTimeMaxTime"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": %(graphite_port)s,
+                                "host": "%(graphite_host)s"
+                            }
+                        }
+                    ],
+                    "obj": "hadoop:service=DataNode,name=DataNodeActivity-%(host)s.outbrain.com-50010",
+                    "resultAlias": "DataNodeActivity",
+                    "attr": [
+                        "bytes_written",
+                        "reads_from_remote_client",
+                        "replaceBlockOpNumOps",
+                        "replaceBlockOpAvgTime",
+                        "replaceBlockOpMinTime",
+                        "replaceBlockOpMaxTime",
+                        "block_verification_failures",
+                        "blocks_read",
+                        "heartBeatsNumOps",
+                        "heartBeatsAvgTime",
+                        "heartBeatsMinTime",
+                        "heartBeatsMaxTime",
+                        "copyBlockOpNumOps",
+                        "copyBlockOpAvgTime",
+                        "copyBlockOpMinTime",
+                        "copyBlockOpMaxTime",
+                        "blocks_written",
+                        "readBlockOpNumOps",
+                        "readBlockOpAvgTime",
+                        "readBlockOpMinTime",
+                        "readBlockOpMaxTime",
+                        "blockChecksumOpNumOps",
+                        "blockChecksumOpAvgTime",
+                        "blockChecksumOpMinTime",
+                        "blockChecksumOpMaxTime",
+                        "reads_from_local_client",
+                        "writes_from_remote_client",
+                        "blocks_verified",
+                        "blockReportsNumOps",
+                        "blockReportsAvgTime",
+                        "blockReportsMinTime",
+                        "blockReportsMaxTime",
+                        "writes_from_local_client",
+                        "blocks_replicated",
+                        "bytes_read",
+                        "blocks_removed",
+                        "writeBlockOpNumOps",
+                        "writeBlockOpAvgTime",
+                        "writeBlockOpMinTime",
+                        "writeBlockOpMaxTime",
+                        "readMetadataOpNumOps",
+                        "readMetadataOpAvgTime",
+                        "readMetadataOpMinTime",
+                        "readMetadataOpMaxTime"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": %(graphite_port)s,
+                                "host": "%(graphite_host)s"
+                            }
+                        }
+                    ],
+                    "obj": "hadoop:service=DataNode,name=FSDatasetState*",
+                    "resultAlias": "DataNodeFSDatasetState",
+                    "attr": [
+                        "Remaining",
+                        "Capacity",
+                        "DfsUsed"
+                    ]
+                }
+            ],
+            "numQueryThreads": 2
+        }
+    ]
+}
