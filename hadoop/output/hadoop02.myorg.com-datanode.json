@@ -42,7 +42,7 @@
                             }
                         }
                     ],
-                    "obj": "hadoop:service=DataNode,name=DataNodeActivity-hadoop02.myorg.com.outbrain.com-50010",
+                    "obj": "hadoop:service=DataNode,name=DataNodeActivity-hadoop02.myorg.com-50010",
                     "resultAlias": "DataNodeActivity",
                     "attr": [
                         "bytes_written",
