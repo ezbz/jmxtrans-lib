@@ -1,0 +1,126 @@
+{
+    "servers": [
+        {
+            "port": 9011,
+            "host": "zk02.myorg.com",
+            "queries": [
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                                "typeNames" : [ "name" ]
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.ZooKeeperService:name0=ReplicatedServer_id*",
+                    "attr": [
+                        "QuorumSize"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                                "typeNames" : [ "name" ]
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.ZooKeeperService:name0=ReplicatedServer_id*,name1=replica*,name2=*",
+                    "attr": [
+                        "MaxClientCnxnsPerHost",
+                        "MaxRequestLatency",
+                        "AvgRequestLatency",
+                        "MinRequestLatency",
+                        "MaxSessionTimeout",
+                        "MinSessionTimeout",
+                        "OutstandingRequests",
+                        "PacketsReceived",
+                        "PacketsSent",
+                        "PendingRevalidationCount",
+                        "TickTime"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                                "typeNames" : [ "name" ]
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.ZooKeeperService:name0=ReplicatedServer_id*,name1=replica*,name2=*,name3=InMemoryDataTree",
+                    "attr": [
+                        "NodeCount",
+                        "WatchCount"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                                "typeNames" : [ "name" ]
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.ZooKeeperService:name0=ReplicatedServer_id*,name1=replica*,name2=*,name3=Connections,name4=*,name5=*",
+                    "resultAlias": "Clients",
+                    "attr": [
+                        "AvgLatency",
+                        "LastLatency",
+                        "MaxLatency",
+                        "MinLatency",
+                        "OutstandingRequests",
+                        "PacketsReceived",
+                        "PacketsSent"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "java.lang:type=Memory",
+                    "resultAlias": "JVM_Memory",
+                    "attr": [
+                        "HeapMemoryUsage",
+                        "NonHeapMemoryUsage"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "java.lang:type=Threading",
+                    "resultAlias": "JVM_Threading",
+                    "attr": [
+                        "ThreadCount"
+                    ]
+                }
+            ],
+            "numQueryThreads": 2
+        }
+    ]
+}
