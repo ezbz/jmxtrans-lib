@@ -1,0 +1,60 @@
+{
+    "servers": [
+        {
+            "port": %(port)s,
+            "host": "%(host)s",
+            "queries": [
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": %(graphite_port)s,
+                                "host": "%(graphite_host)s"
+                            }
+                        }
+                    ],
+                    "obj": "kafka:type=kafka.SocketServerStats",
+                    "resultAlias": "SocketServerStats",
+                    "attr": [
+                        "ProduceRequestsPerSecond",
+                        "FetchRequestsPerSecond",
+                        "TotalProduceRequestMs",
+                        "TotalFetchRequestMs",
+                        "TotalBytesWritten",
+                        "TotalBytesRead",
+                        "NumProduceRequests",
+                        "NumFetchRequests",
+                        "BytesWrittenPerSecond",
+                        "BytesReadPerSecond",
+                        "MaxFetchRequestMs",
+                        "AvgFetchRequestMs",
+                        "MaxProduceRequestMs",
+                        "AvgProduceRequestMs"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": %(graphite_port)s,
+                                "host": "%(graphite_host)s"
+                            }
+                        }
+                    ],
+                    "obj": "kafka:type=kafka.LogFlushStats",
+                    "resultAlias": "LogFlushStats",
+                    "attr": [
+                        "FlushesPerSecond",
+                        "MaxFlushMs",
+                        "TotalFlushMs",
+                        "AvgFlushMs",
+                        "NumFlushes"
+                    ]
+                }
+            ],
+            "numQueryThreads": 2
+        }
+    ]
+}
