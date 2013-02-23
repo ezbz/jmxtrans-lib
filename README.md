@@ -1,6 +1,6 @@
 Introduction
 ============
-Python scripts for generating [JMXTrans](https://github.com/lookfirst/jmxtrans) JSON configuration files for Apache Hadoop, Apache Zookeeper and Apache Cassandra.
+Python scripts for generating [JMXTrans](https://github.com/jmxtrans/jmxtrans) JSON configuration files for Apache Hadoop, Apache Zookeeper and Apache Cassandra.
 
 I use these when I add a new node to these clusters or a new column family to Cassandra. I update the script with the new node, run these python scripts and update the JMXTrans server JSON files.
 
