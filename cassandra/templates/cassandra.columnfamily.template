@@ -1,0 +1,38 @@
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": %(graphite_port)s,
+                                "host": "%(graphite_host)s"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.db:type=ColumnFamilies,keyspace=%(keyspace)s,columnfamily=%(column_family)s",
+                    "resultAlias": "ColumnFamilies/%(column_family)s",
+                    "attr": [
+                        "BloomFilterDiskSpaceUsed",
+                        "BloomFilterFalsePositives",
+                        "BloomFilterFalseRatio",
+                        "CompressionRatio",
+                        "LiveDiskSpaceUsed",
+                        "TotalDiskSpaceUsed",
+                        "LiveSSTableCount",
+                        "MinRowSize",
+                        "MeanRowSize",
+                        "MaxRowSize",
+                        "MemtableColumnsCount",
+                        "MemtableDataSize",
+                        "MemtableSwitchCount",
+                        "RecentBloomFilterFalsePositives",
+                        "RecentBloomFilterFalseRatio",
+                        "UnleveledSSTables",
+                        "RecentReadLatencyMicros",
+                        "RecentWriteLatencyMicros",
+                        "TotalReadLatencyMicros",
+                        "TotalWriteLatencyMicros",
+                        "PendingTasks",
+                        "ReadCount",
+                        "WriteCount"
+                    ]
+                },

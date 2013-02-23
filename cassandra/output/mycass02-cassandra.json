@@ -1,0 +1,641 @@
+{
+    "servers": [
+        {
+            "port": 8080,
+            "host": "mycass02",
+            "queries": [
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.db:type=ColumnFamilies,keyspace=my_ketspaces,columnfamily=MyColumnFamily1",
+                    "resultAlias": "ColumnFamilies/MyColumnFamily1",
+                    "attr": [
+                        "BloomFilterDiskSpaceUsed",
+                        "BloomFilterFalsePositives",
+                        "BloomFilterFalseRatio",
+                        "CompressionRatio",
+                        "LiveDiskSpaceUsed",
+                        "TotalDiskSpaceUsed",
+                        "LiveSSTableCount",
+                        "MinRowSize",
+                        "MeanRowSize",
+                        "MaxRowSize",
+                        "MemtableColumnsCount",
+                        "MemtableDataSize",
+                        "MemtableSwitchCount",
+                        "RecentBloomFilterFalsePositives",
+                        "RecentBloomFilterFalseRatio",
+                        "UnleveledSSTables",
+                        "RecentReadLatencyMicros",
+                        "RecentWriteLatencyMicros",
+                        "TotalReadLatencyMicros",
+                        "TotalWriteLatencyMicros",
+                        "PendingTasks",
+                        "ReadCount",
+                        "WriteCount"
+                    ]
+                },                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.db:type=ColumnFamilies,keyspace=my_ketspaces,columnfamily=MyColumnFamily2",
+                    "resultAlias": "ColumnFamilies/MyColumnFamily2",
+                    "attr": [
+                        "BloomFilterDiskSpaceUsed",
+                        "BloomFilterFalsePositives",
+                        "BloomFilterFalseRatio",
+                        "CompressionRatio",
+                        "LiveDiskSpaceUsed",
+                        "TotalDiskSpaceUsed",
+                        "LiveSSTableCount",
+                        "MinRowSize",
+                        "MeanRowSize",
+                        "MaxRowSize",
+                        "MemtableColumnsCount",
+                        "MemtableDataSize",
+                        "MemtableSwitchCount",
+                        "RecentBloomFilterFalsePositives",
+                        "RecentBloomFilterFalseRatio",
+                        "UnleveledSSTables",
+                        "RecentReadLatencyMicros",
+                        "RecentWriteLatencyMicros",
+                        "TotalReadLatencyMicros",
+                        "TotalWriteLatencyMicros",
+                        "PendingTasks",
+                        "ReadCount",
+                        "WriteCount"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.db:type=Caches,keyspace=my_ketspaces,cache=MyColumnFamily1RowCache",
+                    "resultAlias": "Caches/MyColumnFamily1/RowCache",
+                    "attr": [
+                        "Capacity",
+                        "Hits",
+                        "RecentHitRate",
+                        "Requests",
+                        "Size"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.db:type=Caches,keyspace=my_ketspaces,cache=MyColumnFamily1KeyCache",
+                    "resultAlias": "Caches/MyColumnFamily1/KeyCache",
+                    "attr": [
+                        "Capacity",
+                        "Hits",
+                        "RecentHitRate",
+                        "Requests",
+                        "Size"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.db:type=Caches,keyspace=my_ketspaces,cache=MyColumnFamily2RowCache",
+                    "resultAlias": "Caches/MyColumnFamily2/RowCache",
+                    "attr": [
+                        "Capacity",
+                        "Hits",
+                        "RecentHitRate",
+                        "Requests",
+                        "Size"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.db:type=Caches,keyspace=my_ketspaces,cache=MyColumnFamily2KeyCache",
+                    "resultAlias": "Caches/MyColumnFamily2/KeyCache",
+                    "attr": [
+                        "Capacity",
+                        "Hits",
+                        "RecentHitRate",
+                        "Requests",
+                        "Size"
+                    ]
+                },
+
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.db:type=Commitlog",
+                    "resultAlias": "Commitlog",
+                    "attr": [
+                        "CompletedTasks",
+                        "PendingTasks",
+                        "TotalCommitlogSize"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.db:type=CompactionManager",
+                    "resultAlias": "CompactionManager",
+                    "attr": [
+                        "PendingTasks",
+                        "CompletedTasks"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.db:type=StorageProxy",
+                    "resultAlias": "StorageProxy",
+                    "attr": [
+                        "HintsInProgress",
+                        "RangeOperations",
+                        "ReadOperations",
+                        "WriteOperations",
+                        "RecentRangeLatencyMicros",
+                        "RecentWriteLatencyMicros",
+                        "RecentReadLatencyMicros",
+                        "TotalHints",
+                        "TotalRangeLatencyMicros",
+                        "TotalWriteLatencyMicros",
+                        "TotalReadLatencyMicros"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.db:type=StorageService",
+                    "resultAlias": "StorageService",
+                    "attr": [
+                        "ExceptionCount",
+                        "Load"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.net:type=MessagingService",
+                    "resultAlias": "MessagingService",
+                    "attr": [
+                        "RecentTotalTimouts",
+                        "TotalTimeouts"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.request:type=MutationStage",
+                    "resultAlias": "Stage/MutationStage",
+                    "attr": [
+                        "ActiveCount",
+                        "CompletedTasks",
+                        "CurrentlyBlockedTasks",
+                        "PendingTasks",
+                        "TotalBlockedTasks"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.request:type=ReadRepairStage",
+                    "resultAlias": "Stage/ReadRepairStage",
+                    "attr": [
+                        "ActiveCount",
+                        "CompletedTasks",
+                        "CurrentlyBlockedTasks",
+                        "PendingTasks",
+                        "TotalBlockedTasks"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.request:type=ReadStage",
+                    "resultAlias": "Stage/ReadStage",
+                    "attr": [
+                        "ActiveCount",
+                        "CompletedTasks",
+                        "CurrentlyBlockedTasks",
+                        "PendingTasks",
+                        "TotalBlockedTasks"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.request:type=ReplicateOnWriteStage",
+                    "resultAlias": "Stage/ReplicateOnWriteStage",
+                    "attr": [
+                        "ActiveCount",
+                        "CompletedTasks",
+                        "CurrentlyBlockedTasks",
+                        "PendingTasks",
+                        "TotalBlockedTasks"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.request:type=RequestResponseStage",
+                    "resultAlias": "Stage/RequestResponseStage",
+                    "attr": [
+                        "ActiveCount",
+                        "CompletedTasks",
+                        "CurrentlyBlockedTasks",
+                        "PendingTasks",
+                        "TotalBlockedTasks"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.internal:type=AntiEntropySessions",
+                    "resultAlias": "Internal/AntiEntropySessions",
+                    "attr": [
+                        "ActiveCount",
+                        "CompletedTasks",
+                        "CurrentlyBlockedTasks",
+                        "PendingTasks",
+                        "TotalBlockedTasks"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.internal:type=AntiEntropyStage",
+                    "resultAlias": "Internal/AntiEntropyStage",
+                    "attr": [
+                        "ActiveCount",
+                        "CompletedTasks",
+                        "CurrentlyBlockedTasks",
+                        "PendingTasks",
+                        "TotalBlockedTasks"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.internal:type=FlushWriter",
+                    "resultAlias": "Internal/FlushWriter",
+                    "attr": [
+                        "ActiveCount",
+                        "CompletedTasks",
+                        "CurrentlyBlockedTasks",
+                        "PendingTasks",
+                        "TotalBlockedTasks"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.internal:type=GossipStage",
+                    "resultAlias": "Internal/GossipStage",
+                    "attr": [
+                        "ActiveCount",
+                        "CompletedTasks",
+                        "CurrentlyBlockedTasks",
+                        "PendingTasks",
+                        "TotalBlockedTasks"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.internal:type=HintedHandoff",
+                    "resultAlias": "Internal/HintedHandoff",
+                    "attr": [
+                        "ActiveCount",
+                        "CompletedTasks",
+                        "CurrentlyBlockedTasks",
+                        "PendingTasks",
+                        "TotalBlockedTasks"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.internal:type=InternalResponseStage",
+                    "resultAlias": "Internal/InternalResponseStage",
+                    "attr": [
+                        "ActiveCount",
+                        "CompletedTasks",
+                        "CurrentlyBlockedTasks",
+                        "PendingTasks",
+                        "TotalBlockedTasks"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.internal:type=MemtablePostFlusher",
+                    "resultAlias": "Internal/MemtablePostFlusher",
+                    "attr": [
+                        "ActiveCount",
+                        "CompletedTasks",
+                        "CurrentlyBlockedTasks",
+                        "PendingTasks",
+                        "TotalBlockedTasks"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.internal:type=MigrationStage",
+                    "resultAlias": "Internal/MigrationStage",
+                    "attr": [
+                        "ActiveCount",
+                        "CompletedTasks",
+                        "CurrentlyBlockedTasks",
+                        "PendingTasks",
+                        "TotalBlockedTasks"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.internal:type=MiscStage",
+                    "resultAlias": "Internal/MiscStage",
+                    "attr": [
+                        "ActiveCount",
+                        "CompletedTasks",
+                        "CurrentlyBlockedTasks",
+                        "PendingTasks",
+                        "TotalBlockedTasks"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.internal:type=StreamStage",
+                    "resultAlias": "Internal/StreamStage",
+                    "attr": [
+                        "ActiveCount",
+                        "CompletedTasks",
+                        "CurrentlyBlockedTasks",
+                        "PendingTasks",
+                        "TotalBlockedTasks"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com"
+                            }
+                        }
+                    ],
+                    "obj": "java.lang:type=Memory",
+                    "resultAlias": "heap",
+                    "attr": [
+                        "HeapMemoryUsage",
+                        "NonHeapMemoryUsage"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com",
+                                "typeNames": [
+                                    "name"
+                                ]
+                            }
+                        }
+                    ],
+                    "obj": "java.lang:type=GarbageCollector,name=*",
+                    "resultAlias": "gc",
+                    "attr": [
+                        "CollectionCount",
+                        "CollectionTime"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com",
+                                "typeNames": [
+                                    "name"
+                                ]
+                            }
+                        }
+                    ],
+                    "obj": "java.lang:type=OperatingSystem",
+                    "attr": [
+                        "SystemLoadAverage",
+                        "FreePhysicalMemorySize",
+                        "TotalPhysicalMemorySize"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": 2003,
+                                "host": "graphite.myorg.com",
+                                "typeNames": [
+                                    "name"
+                                ]
+                            }
+                        }
+                    ],
+                    "obj": "java.lang:type=Threading",
+                    "resultAlias": "Threading",
+                    "attr": [
+                        "DaemonThreadCount",
+                        "PeakThreadCount",
+                        "ThreadCount",
+                        "TotalStartedThreadCount"
+                    ]
+                }
+            ],
+            "numQueryThreads": 16
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": %(graphite_port)s,
+                                "host": "%(graphite_host)s"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.db:type=Caches,keyspace=%(keyspace)s,cache=%(column_family)sRowCache",
+                    "resultAlias": "Caches/%(column_family)s/RowCache",
+                    "attr": [
+                        "Capacity",
+                        "Hits",
+                        "RecentHitRate",
+                        "Requests",
+                        "Size"
+                    ]
+                },
+                {
+                    "outputWriters": [
+                        {
+                            "@class": "com.googlecode.jmxtrans.model.output.GraphiteWriter",
+                            "settings": {
+                                "port": %(graphite_port)s,
+                                "host": "%(graphite_host)s"
+                            }
+                        }
+                    ],
+                    "obj": "org.apache.cassandra.db:type=Caches,keyspace=%(keyspace)s,cache=%(column_family)sKeyCache",
+                    "resultAlias": "Caches/%(column_family)s/KeyCache",
+                    "attr": [
+                        "Capacity",
+                        "Hits",
+                        "RecentHitRate",
+                        "Requests",
+                        "Size"
+                    ]
+                },

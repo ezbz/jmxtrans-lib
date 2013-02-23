@@ -1,0 +1,13 @@
+[
+    {
+        "name": "my_ketspaces",
+        "columnFamilies": [
+            {
+                "name": "MyColumnFamily1"
+            },
+            {
+                "name": "MyColumnFamily2"
+            }
+        ]
+    }
+]
